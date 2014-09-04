@@ -1,0 +1,50 @@
+<input type="hidden" id="${entry.idEntry}_map_provider" name="${entry.idEntry}_map_provider" value="${entry.mapProvider.key}"/>
+<div class="form-element" id="${entry.idEntry}_waiting" style="display:none;">
+  <span class="form-label">
+	<label for="">&nbsp;</label>
+  </span>
+  <span class="form-field-column">
+  	#i18n{module.directory.gis.loading}
+  </span>
+</div>
+<div style="float:left; width:45%">
+</div>
+
+<input type="hidden" id="${entry.idEntry}_lngAddress" name="${entry.idEntry}_lngAddress" />
+<input type="hidden" id="${entry.idEntry}_latAddress" name="${entry.idEntry}_latAddress" />
+
+<div id="map_canvas" class="map" style="display:none;"></div>
+<div style="clear:both;"></div>
+
+<link rel="stylesheet" type="text/css" href="css/plugins/gis/gis.css" media="screen, projection, print"/>
+<link rel="stylesheet" type="text/css" href="js/plugins/gis/openlayers/Legend.css" />
+<link rel="stylesheet" type="text/css" href="js/plugins/gis/openlayers/GeolocalizationPanel.css" />
+<link rel="stylesheet" type="text/css" href="js/plugins/gis/openlayers/LayerSearchPanel.css" />
+<link rel="stylesheet" type="text/css" href="js/jquery/plugins/ui/css/jquery-ui.css" />
+
+<script src="js/plugins/genericattributes/modules/gis/jquery.geolocalize.js" type="text/javascript"></script>
+<script src="js/plugins/gis/LABjs-1.0.2rc1/LAB.js" type="text/javascript"></script>
+<script src="js/plugins/gis/gis.js" type="text/javascript"></script>
+<script src="js/proj4js-combined.js" type="text/javascript"></script>
+<script src="js/jquery/plugins/ui/jquery.ui.custom-autocomplete.min.js" type="text/javascript" ></script>
+<script src="jsp/plugins/address/modules/autocomplete/autocomplete-js.jsp" type="text/javascript" ></script>
+
+<script src="js/plugins/address/modules/autocomplete/jQuery.suggestPOI.js" type="text/javascript" ></script>
+<script src="jsp/site/plugins/address/modules/autocomplete/SetupSuggestPOI.js.jsp" type="text/javascript" ></script>
+
+<script type="text/javascript">
+// initialisation de la map
+ $(document).ready(function() {
+	$("#${entry.idEntry}_address").geolocalizeSuggestPOI({
+		mapHeight: "330px",
+		mapWidth: "100%",
+		inputLngName : "${entry.idEntry}_x",
+		inputLatName : "${entry.idEntry}_y",
+		inputLngAddressName : "${entry.idEntry}_lngAddress",
+		inputLatAddressName : "${entry.idEntry}_latAddress",
+		gisCode : "GENATT"
+	}).focus();
+});
+</script>
+
+<noscript>#i18n{module.genericattributes.gis.javascript.disabled}</noscript>

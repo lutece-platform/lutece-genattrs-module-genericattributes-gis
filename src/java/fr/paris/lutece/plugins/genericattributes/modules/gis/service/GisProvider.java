@@ -96,4 +96,10 @@ public class GisProvider implements IMapProvider
         return "Gis Provider";
     }
 
+	@Override
+	public Object getParameter(int arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

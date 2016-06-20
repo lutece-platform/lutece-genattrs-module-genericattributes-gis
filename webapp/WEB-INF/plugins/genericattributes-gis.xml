@@ -4,7 +4,7 @@
     <!-- Plugin Informations -->
 	<name>genericattributes-gis</name>
 	<class>fr.paris.lutece.plugins.genericattributes.modules.gis.service.GenericAttributesGisPlugin</class>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<description>module.genericattributes.gis.module.description</description>
 	<documentation/>
 	<installation/>
